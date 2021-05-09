@@ -12,7 +12,7 @@
         android:id="@+id/menu1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="Click Menu"
+        android:onClick="ClickMenu"
         tools:ignore="OnClick"
         android:src="@drawable/ic_menu"/>
 
