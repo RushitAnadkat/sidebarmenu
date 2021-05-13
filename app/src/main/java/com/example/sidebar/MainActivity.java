@@ -12,85 +12,58 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    DrawerLayout dl ;
+    DrawerLayout dl;
     ImageView iv;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dl= findViewById(R.id.drawer_layout);
-        iv= findViewById(R.id.menu1);
+        dl = findViewById(R.id.drawer_layout);
+        iv = findViewById(R.id.menu1);
     }
-    public void ClickMenu(View v)
-    {
+
+    public void ClickMenu(View v) {
         openDrawer(dl);
     }
-
-    public static void openDrawer(DrawerLayout dl) {
-
-        dl.openDrawer(GravityCompat.START);
-
-    }
-    public void ClickLogo(View v)
-    {
+    public static void openDrawer(DrawerLayout dl) { dl.openDrawer(GravityCompat.START); }
+    public void ClickLogo(View v) {
         closeDrawer(dl);
     }
-
     public static void closeDrawer(DrawerLayout dl) {
-
-        if (dl.isDrawerOpen(GravityCompat.START))
-        {
+        if (dl.isDrawerOpen(GravityCompat.START)) {
             dl.closeDrawer(GravityCompat.START);
         }
-
     }
-    public void Home(View v)
-    {
+    public void Home(View v) {
         recreate();
     }
-    public void AllTransactions(View v)
-    {
-        redirectActivity(this,AllTransactions.class);
-    }
-
-    public static void redirectActivity(Activity activity,Class aclass)
-    {
-        Intent i = new Intent(activity,aclass);
-
+    public static void redirectActivity(Activity activity, Class aclass) {
+        Intent i = new Intent(activity, aclass);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(i);
-
     }
-    public void DayView(View v)
-    {
-        Toast.makeText(this, "Day View", Toast.LENGTH_SHORT).show();
+    public void AllTransactions(View v) { redirectActivity(this, AllTransactions.class); }
+    public void DayView(View v) {
+        redirectActivity(this, DayView.class);
     }
-    public  void MonthView(View v)
-    {
-        Toast.makeText(this, "Month View", Toast.LENGTH_SHORT).show();
+    public void MonthView(View v) {
+        redirectActivity(this, MonthView.class);
     }
-    public void CustomView(View v)
-    {
-        Toast.makeText(this, "Custom View", Toast.LENGTH_SHORT).show();
+    public void CustomView(View v) {
+        redirectActivity(this, CustomView.class);
     }
-    public void Budget(View v)
-    {
-        Toast.makeText(this, "Budget", Toast.LENGTH_SHORT).show();
+    public void Budget(View v) {
+        redirectActivity(this, Budget.class);
     }
-    public void Category(View v)
-    {
-        Toast.makeText(this, "Category", Toast.LENGTH_SHORT).show();
+    public void Category(View v) {
+        redirectActivity(this, Category.class);
     }
-    public void Settings(View v)
-    {
-        Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+    public void Settings(View v) {
+        redirectActivity(this, Settings.class);
     }
     protected void onPause() {
-
         super.onPause();
         dl.closeDrawer(GravityCompat.START);
     }
-
 }

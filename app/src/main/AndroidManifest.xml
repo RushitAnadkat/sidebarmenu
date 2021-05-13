@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sidebar">
-        <activity android:name=".AllTransactions"></activity>
+        <activity android:name=".Settings"></activity>
+        <activity android:name=".Category" />
+        <activity android:name=".Budget" />
+        <activity android:name=".MonthView" />
+        <activity android:name=".CustomView" />
+        <activity android:name=".DayView" />
+        <activity android:name=".addincome" />
+        <activity android:name=".addexpense" />
+        <activity android:name=".AllTransactions" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
