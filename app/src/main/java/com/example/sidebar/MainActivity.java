@@ -101,19 +101,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(isOpen) {
+            fap1.startAnimation(fapclose);
             fap2.startAnimation(fapclose);
-            fap3.startAnimation(fapclose);
-            fap1.startAnimation(fapclockwise);
+            fap3.startAnimation(fapclockwise);
+            fap1.setClickable(false);
             fap2.setClickable(false);
-            fap3.setClickable(false);
             isOpen=false;
         }
         else{
+            fap1.startAnimation(fapopen);
             fap2.startAnimation(fapopen);
-            fap3.startAnimation(fapopen);
-            fap1.startAnimation(fapanticlockwise);
+            fap3.startAnimation(fapanticlockwise);
+            fap1.setClickable(true);
             fap2.setClickable(true);
-            fap3.setClickable(true);
             isOpen=true;
         }
 

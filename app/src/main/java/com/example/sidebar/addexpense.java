@@ -24,7 +24,33 @@ public class addexpense extends AppCompatActivity {
     }
     public void addExpense(View v)
     {
+        recreate();
+    }
+    public void AllTransactions(View v) { MainActivity.redirectActivity(this,MainActivity.class);}
+    public void Home(View v)
+    {
         MainActivity.redirectActivity(this,MainActivity.class);
+    }
+    public void DayView(View v) { MainActivity.redirectActivity(this,DayView.class); }
+    public  void MonthView(View v)
+    {
+        MainActivity.redirectActivity(this,MonthView.class);
+    }
+    public void CustomView(View v)
+    {
+        MainActivity.redirectActivity(this,CustomView.class);
+    }
+    public void Budget(View v)
+    {
+        MainActivity.redirectActivity(this,Budget.class);
+    }
+    public void Category(View v)
+    {
+        MainActivity.redirectActivity(this,Category.class);
+    }
+    public void Settings(View v)
+    {
+        MainActivity.redirectActivity(this,Settings.class);
     }
     protected void onPause() {
         super.onPause();
