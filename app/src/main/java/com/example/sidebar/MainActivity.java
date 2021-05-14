@@ -8,19 +8,52 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     DrawerLayout dl;
     ImageView iv;
+    FloatingActionButton fap1,fap2,fap3;
+    Animation fapopen,fapclose,fapclockwise,fapanticlockwise;
 
+    Boolean isOpen=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         dl = findViewById(R.id.drawer_layout);
         iv = findViewById(R.id.menu1);
+        fap1=findViewById(R.id.fltincome);
+        fap2=findViewById(R.id.fltexpense);
+        fap3=findViewById(R.id.fltmenu);
+        fapopen= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_open_anim);
+        fapclose= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_close_anim);
+        fapclockwise=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.to_bottom_anim);
+        fapanticlockwise=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.from_bottom_anim);
+        fap3.setOnClickListener(this);
+        fap1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(MainActivity.this,addexpense.class);
+                startActivity(i);
+                finish();
+            }
+        });
+        fap2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(MainActivity.this,addincome.class);
+                startActivity(i);
+                finish();
+            }
+        });
     }
 
     public void ClickMenu(View v) {
@@ -66,4 +99,26 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         dl.closeDrawer(GravityCompat.START);
     }
+
+    @Override
+    public void onClick(View v) {
+        if(isOpen) {
+            fap2.startAnimation(fapclose);
+            fap3.startAnimation(fapclose);
+            fap1.startAnimation(fapclockwise);
+            fap2.setClickable(false);
+            fap3.setClickable(false);
+            isOpen=false;
+        }
+        else{
+            fap2.startAnimation(fapopen);
+            fap3.startAnimation(fapopen);
+            fap1.startAnimation(fapanticlockwise);
+            fap2.setClickable(true);
+            fap3.setClickable(true);
+            isOpen=true;
+        }
+
+    }
+
 }

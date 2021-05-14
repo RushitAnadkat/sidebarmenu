@@ -10,9 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-
-        >
+        android:orientation="vertical">
 
         <include layout="@layout/main_toolbar" />
 
@@ -23,6 +21,63 @@
             android:text="Home"
             android:textSize="50sp"
             android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|right"
+        android:orientation="vertical"
+        android:paddingBottom="18dp"
+        android:paddingRight="20dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_expense"
+            android:paddingBottom="50dp"
+            android:id="@+id/fltmenu">
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="bottom|right"
+        android:paddingBottom="85dp"
+        android:paddingRight="20dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fltexpense"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_minimize"
+            android:visibility="invisible">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="bottom|right"
+        android:paddingBottom="155dp"
+        android:paddingRight="20dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fltincome"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_add"
+            android:visibility="invisible">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
     </LinearLayout>
 
     <RelativeLayout
@@ -34,6 +89,5 @@
         <include layout="@layout/main_nav_drawer" />
 
     </RelativeLayout>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
