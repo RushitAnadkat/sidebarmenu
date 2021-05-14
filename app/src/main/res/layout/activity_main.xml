@@ -38,6 +38,7 @@
             android:src="@drawable/ic_expense"
             android:paddingBottom="50dp"
             android:id="@+id/fltmenu">
+
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
     </LinearLayout>
 
@@ -55,7 +56,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:src="@drawable/ic_minimize"
-            android:visibility="invisible">
+            android:visibility="invisible"
+            app:maxImageSize="45dp">
 
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
     </LinearLayout>
@@ -65,7 +67,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="bottom|right"
-        android:paddingBottom="155dp"
+        android:paddingBottom="150dp"
         android:paddingRight="20dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -74,7 +76,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:src="@drawable/ic_add"
-            android:visibility="invisible">
+            android:visibility="invisible"
+            app:maxImageSize="45dp">
 
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
 

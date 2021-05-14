@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 Intent i=new Intent();
-                i.setClass(MainActivity.this,addexpense.class);
+                i.setClass(MainActivity.this,addincome.class);
                 startActivity(i);
             }
         });
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 Intent i=new Intent();
-                i.setClass(MainActivity.this,addincome.class);
+                i.setClass(MainActivity.this,addexpense.class);
                 startActivity(i);
             }
         });
