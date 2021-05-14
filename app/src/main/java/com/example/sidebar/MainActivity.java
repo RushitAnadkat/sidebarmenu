@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fap3=findViewById(R.id.fltmenu);
         fapopen= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_open_anim);
         fapclose= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_close_anim);
-        fapclockwise=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.to_bottom_anim);
-        fapanticlockwise=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.from_bottom_anim);
+        fapclockwise=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.from_bottom_anim);
+        fapanticlockwise=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.to_bottom_anim);
         fap3.setOnClickListener(this);
         fap1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent i=new Intent();
                 i.setClass(MainActivity.this,addexpense.class);
                 startActivity(i);
-                finish();
             }
         });
         fap2.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent i=new Intent();
                 i.setClass(MainActivity.this,addincome.class);
                 startActivity(i);
-                finish();
             }
         });
     }
