@@ -19,10 +19,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Category"
-            android:textSize="50sp"
-            android:textStyle="bold" />
+            android:text="Categories"
+            android:textSize="24dp"
+             />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu" />
+
     </LinearLayout>
 
     <RelativeLayout
