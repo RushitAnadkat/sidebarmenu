@@ -3,17 +3,30 @@ package com.example.sidebar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class Category extends AppCompatActivity {
     DrawerLayout dl;
-
+    FloatingActionButton fab1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         dl = findViewById(R.id.drawer_layout);
+        fab1 = findViewById(R.id.addcategory);
+
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.setClass(Category.this,AddCategory.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void ClickMenu(View v) {

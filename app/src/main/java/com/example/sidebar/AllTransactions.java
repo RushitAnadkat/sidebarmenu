@@ -21,11 +21,11 @@ public class AllTransactions extends AppCompatActivity {
         dl = findViewById(R.id.drawer_layout);
         recyclerView = findViewById(R.id.transaction);
         ArrayList<Transaction_Item> transaction_items = new ArrayList<Transaction_Item>();
-        transaction_items.add(new Transaction_Item(R.drawable.debt,1000,"31/01/1997"));
+        transaction_items.add(new Transaction_Item(R.drawable.cloth,1000,"31/01/1997"));
         transaction_items.add(new Transaction_Item(R.drawable.food,5000,"11/11/2001"));
-        transaction_items.add(new Transaction_Item(R.drawable.furniture,900,"01/09/2005"));
-        transaction_items.add(new Transaction_Item(R.drawable.entertenment,1100,"10/07/1989"));
-        transaction_items.add(new Transaction_Item(R.drawable.bills,11100,"06/05/2010"));
+        transaction_items.add(new Transaction_Item(R.drawable.groceries,900,"01/09/2005"));
+        transaction_items.add(new Transaction_Item(R.drawable.entertainment,1100,"10/07/1989"));
+        transaction_items.add(new Transaction_Item(R.drawable.financial,11100,"06/05/2010"));
         MyTransactionItemAdapter myTransactionItemAdapter = new MyTransactionItemAdapter(transaction_items,AllTransactions.this);
         myTransactionItemAdapter.setTransactionItems(transaction_items);
         recyclerView.setAdapter(myTransactionItemAdapter);

@@ -42,8 +42,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="64dp"
                 android:ems="10"
+                android:focusable="false"
+                android:inputType="none"
                 android:hint="Date"
-                android:inputType="textPersonName"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.485"
@@ -61,6 +62,7 @@
                 android:scrollbars="vertical"
                 android:hint="Amount"
                 android:isScrollContainer="false"
+                android:inputType="numberDecimal"
                 app:layout_constraintEnd_toEndOf="@+id/edtdate"
                 app:layout_constraintHorizontal_bias="0.485"
                 app:layout_constraintStart_toStartOf="@+id/edtdate"
@@ -96,6 +98,7 @@
 
             <RadioGroup
                 android:layout_width="wrap_content"
+                android:id="@+id/rgroup"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="56dp"
                 android:orientation="horizontal"
@@ -145,7 +148,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.854"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btncard" />
+                app:layout_constraintTop_toBottomOf="@+id/rgroup" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -21,7 +21,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:padding="10dp"
-                android:src="@drawable/debt" />
+                android:src="@drawable/income" />
 
             <LinearLayout
                 android:layout_width="match_parent"

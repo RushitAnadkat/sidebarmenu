@@ -43,8 +43,8 @@
                 android:layout_marginTop="64dp"
                 android:ems="10"
                 android:hint="Date"
-                android:inputType="textPersonName"
-
+                android:focusable="false"
+                android:inputType="none"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.485"
                 app:layout_constraintStart_toStartOf="@+id/addincome"
@@ -60,6 +60,7 @@
                 android:scrollbarStyle="insideInset"
                 android:scrollbars="vertical"
                 android:hint="Amount"
+                android:inputType="numberDecimal"
                 android:isScrollContainer="false"
                 app:layout_constraintEnd_toEndOf="@+id/edtdate"
                 app:layout_constraintHorizontal_bias="0.485"
@@ -93,48 +94,59 @@
                 app:layout_constraintStart_toStartOf="@+id/spinner"
                 app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
-            <Button
-                android:id="@+id/btncash"
+            <RadioGroup
+                android:id="@+id/rgroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="32dp"
-                android:text="Cash"
-                android:textColor="@color/black"
-                android:textSize="22dp"
-                android:textStyle="bold"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtnote" />
+                android:layout_marginTop="56dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/edtnote"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/edtnote"
+                app:layout_constraintTop_toBottomOf="@+id/edtnote"
+                tools:ignore="MissingConstraints">
+
+                <RadioButton
+                    android:id="@+id/rbcash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:elevation="4dp"
+                    android:padding="10dp"
+                    android:text="Cash"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="20dp"
+                    tools:layout_editor_absoluteX="92dp"
+                    tools:layout_editor_absoluteY="395dp" />
+
+                <RadioButton
+                    android:id="@+id/rbcard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:elevation="4dp"
+                    android:padding="10dp"
+                    android:text="Card"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="20dp"
+                    tools:layout_editor_absoluteX="242dp"
+                    tools:layout_editor_absoluteY="394dp" />
+            </RadioGroup>
 
             <Button
-                android:id="@+id/btncard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="160dp"
-                android:background="@android:color/transparent"
-                android:text="Card"
-                android:textColor="@color/black"
-                android:textSize="22dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btncash"
-                app:layout_constraintTop_toBottomOf="@+id/edtnote" />
-
-            <Button
-                android:id="@+id/btnadd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="22dp"
                 android:text="Add"
+                android:id="@+id/btnadd"
+                app:layout_constraintHorizontal_bias="0.854"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.854"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btncard" />
-
+                app:layout_constraintTop_toBottomOf="@+id/rgroup"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
