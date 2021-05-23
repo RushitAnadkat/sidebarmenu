@@ -3,17 +3,31 @@ package com.example.sidebar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Budget extends AppCompatActivity {
     DrawerLayout dl;
-
+    FloatingActionButton fbbgt1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget);
         dl = findViewById(R.id.drawer_layout);
+        fbbgt1 = findViewById(R.id.addbugetclick);
+
+        fbbgt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.setClass(Budget.this,AddBudget.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void ClickMenu(View v) {

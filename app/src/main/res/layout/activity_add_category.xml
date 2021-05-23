@@ -7,14 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".AddCategory">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/main_toolbar" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -22,7 +14,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include"
+
             app:layout_constraintVertical_bias="1.0">
 
             <TextView
@@ -39,7 +31,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/edtcategoryname"
+                android:id="@+id/edtcatname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="46dp"
@@ -50,15 +42,15 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvcategory" />
 
             <RadioGroup
-                android:id="@+id/rgroup"
+                android:id="@+id/catgroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="@+id/edtnote"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/edtcategoryname"
-                app:layout_constraintTop_toBottomOf="@+id/edtcategoryname"
+                app:layout_constraintStart_toStartOf="@+id/edtcatname"
+                app:layout_constraintTop_toBottomOf="@+id/edtcatname"
 
                 tools:ignore="MissingConstraints">
 
@@ -104,8 +96,8 @@
                 android:scrollbarStyle="insideInset"
                 android:scrollbars="vertical"
                 app:layout_constraintEnd_toEndOf="@+id/spinner"
-                app:layout_constraintStart_toStartOf="@+id/rgroup"
-                app:layout_constraintTop_toBottomOf="@+id/rgroup" />
+                app:layout_constraintStart_toStartOf="@+id/catgroup"
+                app:layout_constraintTop_toBottomOf="@+id/catgroup" />
 
             <Spinner
                 android:id="@+id/spinner_icon"
@@ -133,7 +125,6 @@
                 app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

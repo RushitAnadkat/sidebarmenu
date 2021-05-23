@@ -1,5 +1,6 @@
 package com.example.sidebar;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
@@ -20,56 +21,57 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class AddCategory extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
-    EditText et1,et2;
-    Spinner sp1;
-    RadioGroup rg1;
-    RadioButton rb;
+public class AddCategory extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     FloatingActionButton fb1;
-    String name;
+    EditText et1,et2;
+    RadioButton rb;
+    RadioGroup rg1;
+    Spinner spn1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_category);
-        et1 = findViewById(R.id.edtcategoryname);
-        et2 = findViewById(R.id.edtnote_ic);
-        sp1 = findViewById(R.id.spinner_icon);
+
         fb1 = findViewById(R.id.save);
-        rg1 = findViewById(R.id.rgroup);
-        int radioId = rg1.getCheckedRadioButtonId();
-        rb = findViewById(radioId);
+        et1 = findViewById(R.id.edtcatname);
+        et2 = findViewById(R.id.edtnote_ic);
+        spn1 = findViewById(R.id.spinner_icon);
 
         ArrayList<AddCategoryicon> customList = new ArrayList<>();
-        customList.add(new AddCategoryicon(R.drawable.investment));
-        customList.add(new AddCategoryicon(R.drawable.entertainment));
-        customList.add(new AddCategoryicon(R.drawable.gift));
-        customList.add(new AddCategoryicon(R.drawable.food));
-        customList.add(new AddCategoryicon(R.drawable.mortgage));
+        customList.add(new AddCategoryicon(R.drawable.fast_food));
+        customList.add(new AddCategoryicon(R.drawable.public_transport));
+        customList.add(new AddCategoryicon(R.drawable.budget));
 
         AddiconAdapter addiconAdapter = new AddiconAdapter(this,customList);
-        if (sp1 != null) {
-            sp1.setAdapter(addiconAdapter);
-            sp1.setOnItemSelectedListener(this);
+        if(spn1!=null)
+        {
+            spn1.setAdapter(addiconAdapter);
+            spn1.setOnItemSelectedListener(this);
         }
 
         fb1.setOnClickListener(this);
-
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        AddCategoryicon item = (AddCategoryicon) parent.getSelectedItem();
-//        Toast.makeText(this, item.getSpinner_icon(), Toast.LENGTH_SHORT).show();
-//        name = item.getSpinner_icon();
+        AddCategoryicon addCategoryicon = (AddCategoryicon) parent.getSelectedItem();
+        Toast.makeText(this, addCategoryicon.getSpinner_icon(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
+    public void onNothingSelected(AdapterView<?> parent) { }
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(AddCategory.this,"Demo", Toast.LENGTH_SHORT).show();
+        String cat = et1.getText().toString();
+        String not = et2.getText().toString();
+        rg1 = findViewById(R.id.catgroup);
+        int radioId = rg1.getCheckedRadioButtonId();
+        rb = findViewById(radioId);
+        dbHelper db = new dbHelper(this);
+        String result = db.AddCategory(cat,rb.getText().toString(),not);
+
+        Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
     }
+
 }

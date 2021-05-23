@@ -11,18 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
         >
 
         <include layout="@layout/main_toolbar" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="DayView"
-            android:textSize="50sp"
-            android:textStyle="bold" />
+            android:id="@+id/addbudget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Budget"
+            android:textSize="24dp" />
+
     </LinearLayout>
 
     <RelativeLayout

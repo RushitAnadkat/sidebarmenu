@@ -11,18 +11,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
         >
 
         <include layout="@layout/main_toolbar" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Budget"
-            android:textSize="50sp"
-            android:textStyle="bold" />
+            android:gravity="bottom|right">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addbugetclick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="25dp"
+                android:src="@drawable/ic_add" />
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <RelativeLayout
